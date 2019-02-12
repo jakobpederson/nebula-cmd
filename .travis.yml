@@ -6,3 +6,6 @@ install:
 script:
   - sudo sh test/travis_ci_scripts/travis_ci_build_script.sh
   - python -m unittest discover
+after_success:
+  - sudo sh test/travis_ci_Scripts/upload-nebula_script.sh
+
