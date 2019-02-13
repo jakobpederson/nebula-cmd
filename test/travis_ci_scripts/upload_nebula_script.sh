@@ -11,8 +11,8 @@ pyinstaller -F nebulactl.py
 
 MESSAGE=$(git log -1 HEAD --pretty=format:%s)
 
-if [[ "$MESSAGE" == "Travis build" ]]; then
-    echo "already pushed run grunt and exit"
+if [[ "$MESSAGE" == *"Travis build"* ]]; then
+    echo "already pushed"
 else
     #add, commit and push files
     git add -f .
