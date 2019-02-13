@@ -20,6 +20,6 @@ else
     git remote add origin https://$USER_NAME:$GITHUB_API_KEY@github.com/$USER_NAME/nebula-cmd.git > /dev/null 2>&1
     git add -f .
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed - nebulactl.py run and pushed"
-    git push --quiet --set-upstream origin test-branch-1
+    git push --quiet --set-upstream origin $TRAVIS_BRANCH
     echo -e "Done"
 fi
