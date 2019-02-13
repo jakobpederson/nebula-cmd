@@ -4,7 +4,7 @@ git config --global user.email $USER_EMAIL
 git config --global user.name $USER_NAME
 
 #clone the repository in the buildApk folder
-git clone --quiet --branch=test-branch-1  https://$USER_NAME:$GITHUB_API_KEY@github.com/$USER_NAME/nebula-cmd  master > /dev/null
+git clone --quiet --branch=$TRAVIS_BRANCH  https://$USER_NAME:$GITHUB_API_KEY@github.com/$USER_NAME/nebula-cmd  master > /dev/null
 
 cd master
 pyinstaller -F nebulactl.py
