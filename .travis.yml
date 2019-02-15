@@ -1,8 +1,11 @@
 language: python
 python:
-  - "2.7"
+- '2.7'
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - sudo sh test/travis_ci_scripts/travis_ci_build_script.sh
-  - python -m unittest discover
+- sudo sh test/travis_ci_scripts/travis_ci_build_script.sh
+- python -m unittest discover
+env:
+  matrix:
+    secure: AZBBwbSnMkpRy992KoV/Mp3th5j+4F7LSwKz5KSBL7bjTO6wozD/PtOlNt2DkvLpQukBUb91g/voIpUOW+LJ65URY4HZSsSW2AXm9x5xzBSMYTiKyw7Dpry2eQdZt+c+kkWfT4Ccjq03YKjoFYMqNEM81YEpBMfLNAR8pYBhDoKf7tzmBdDtsVMVSbAfGzL4ccw9+Hx5QblygPU1ZJzoW65uUCCgJFxqLQ7pxdNLAKlZqji+/4vuTVtSHjZuhZOWVPQXZaFBA0FasR6fmAG3MNKuIiRP4WiVjCNuwBiC5L0B0Vh0qvZJgUMgApE7wibPNxPKggIwwrP1LLPRUbhG6O7hPkEpxiL0ikyE3s0YKrcUGOqE3goAaYoiPBC4gH7bHfbqZp6UMihZlRJ8AKa50TEfSNRZ5J2u7sMQVx7RllkHmuBPV+hMmbi8vS043q8kcg+Hvh7gNCQeKT00H+xaoUp6kIP9Q9ZSiYePXrJUz/0r4UT50LZ2nU0TDLQY/t9qc4Fb94JXqxgKmvJzNjtFM6r/461t0EAgzVJS08Ia1oQ0fKxUiLqOf7iWjslV0FXQP5rlNDBNP3KfB1uiLLSf6oMFX6TwItv0g/U/uqks8Tp343q5VN9a942TDHRTvpv5fyusek23TghpRKCTVw8GWMHSgLYfNkBYbRriBTViuwg=
