@@ -5,7 +5,7 @@ SOURCE_BRANCH="$SOURCE_BRANCH"
 TARGET_BRANCH="$TRAVIS_BRANCH"
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
-if [ "$TRAVIS_SECURE_ENV_VARS" ] == "false" ]; then
+if [ "$TRAVIS_SECURE_ENV_VARS" == "false" ]; then
     echo "user not approved"
     exit 0
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
