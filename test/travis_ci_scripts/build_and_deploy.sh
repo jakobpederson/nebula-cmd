@@ -8,9 +8,11 @@ TARGET_BRANCH="$TRAVIS_BRANCH"
 if [ "$TRAVIS_SECURE_ENV_VARS" == "false" ]; then
     echo "user not approved"
     exit 0
+fi
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
     exit 0
+fi
 
 # Save some useful information
 REPO=`git config remote.origin.url`
@@ -58,4 +60,3 @@ git commit -m "Deploy to: ${SHA}"
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
 echo "done"
-fi
