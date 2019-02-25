@@ -11,6 +11,7 @@ MESSAGE=$(git log -1 HEAD --pretty=format:%s)
 
 if [[ "$MESSAGE" == *"Travis build"* ]] || [[ "$MESSAGE" == *"SKIP TRAVIS"* ]]; then
     echo "already pushed"
+    exit 0
 else
     #add, commit and push files
     cd master
