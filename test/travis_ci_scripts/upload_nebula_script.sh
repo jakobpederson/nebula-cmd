@@ -15,11 +15,11 @@ if [[ "$MESSAGE" == *"Travis build"* ]] || [[ "$MESSAGE" == *"SKIP TRAVIS"* ]]; 
     echo "already pushed"
 else
     #add, commit and push files
-    git add -f dist/
+    git add -f
     git remote rm origin
     git remote add origin https://$USER_NAME:$GITHUB_API_KEY@github.com/$USER_NAME/nebula-cmd.git > /dev/null 2>&1
-    git add -f dist/
-    git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed - nebulactl.py run and pushed SKIP TRAVIS"
+    git add -f
+    git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed - nebulactl.py run and pushed SKIP TRAVIS" dist
     git push --quiet --set-upstream origin $TRAVIS_BRANCH
     echo -e "Done"
 fi
