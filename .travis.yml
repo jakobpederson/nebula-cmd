@@ -8,4 +8,4 @@ script:
   - python -m unittest discover
 after_success:
   - chmod +x test/travis_ci_scripts/upload_nebula.sh
-  - test/travis_ci_scripts/upload_nebula.sh - python -m unittest discover
+  - test/travis_ci_scripts/upload_nebulactl.sh - python -m unittest discover
