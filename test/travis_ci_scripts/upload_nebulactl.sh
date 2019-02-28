@@ -11,9 +11,7 @@ pyinstaller -F nebulactl.py
 
 MESSAGE=$(git log -1 HEAD --pretty=format:%s)
 
-if [[ "$MESSAGE" == *"Travis build"* ]] || [[ "$MESSAGE" == *"SKIP TRAVIS"* ]]; then
-    echo "already pushed"
-else
+if [[ "$MESSAGE" == *"RUN BUILD SCRIPT"* ]]; then
     #add, commit and push files
     git add -f
     git remote rm origin
@@ -22,4 +20,6 @@ else
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed - nebulactl.py run and pushed SKIP TRAVIS" dist
     git push --quiet --set-upstream origin $TRAVIS_BRANCH
     echo -e "Done"
+else
+    echo "already pushed"
 fi
