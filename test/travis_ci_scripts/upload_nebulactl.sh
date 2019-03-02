@@ -19,6 +19,6 @@ if [[ "$MESSAGE" == *"RUN UPLOAD SCRIPT"* ]]; then
     git add -f
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed - nebulactl.py run and pushed" dist
     git push --quiet --set-upstream origin $TRAVIS_BRANCH
-    echo -e "Done"
+    echo -e "upload run and pushed"
 else
-    echo "already pushed"
+    echo "build complete"
