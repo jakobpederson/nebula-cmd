@@ -22,3 +22,4 @@ if [[ "$MESSAGE" == *"RUN UPLOAD SCRIPT"* ]]; then
     echo -e "upload run and pushed"
 else
     echo "build complete"
+fi
