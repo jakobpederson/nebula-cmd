@@ -21,5 +21,5 @@ if [[ "$MESSAGE" == *"RUN UPLOAD SCRIPT"* ]]; then
     git push --quiet --set-upstream origin $TRAVIS_BRANCH
     echo -e "upload run and pushed"
 else
-    echo "build completed"
+    echo "build completed test run"
 fi
